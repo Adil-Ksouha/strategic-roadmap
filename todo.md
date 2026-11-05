@@ -1,0 +1,229 @@
+# Project TODO
+
+- [x] Define portfolio entities, lifecycle conventions, statuses, and planning horizons.
+- [x] Create database tables for capabilities, use cases, their many-to-many relationships, planning items, execution milestones, and annual investments.
+- [x] Apply the database migration and seed representative telecom and cloud planning data.
+- [x] Add typed server procedures for dashboard metrics, portfolio records, relationship management, and five-year roadmaps.
+- [x] Build the executive dashboard with portfolio summary metrics, financial trend, capability coverage, and priority highlights.
+- [x] Build planning workspaces to manage strategic capabilities, feature enhancements, EoS items, capacity forecasts, and use cases.
+- [x] Build an interactive graph view for capability-to-use-case relationships, with selected-item inspection.
+- [x] Build the five-year execution roadmap with phased delivery milestones for all use cases.
+- [x] Build the five-year financial roadmap with annual investments by use case and portfolio-level rollups.
+- [x] Establish polished visual design, responsive behavior, loading states, and usable empty states.
+- [x] Add and run Vitest coverage for portfolio data transformations and server procedures.
+- [x] Validate the application visually, review all task states, and create the initial delivery checkpoint.
+- [x] Add full edit, delete, and planning-item status-management flows for portfolio records.
+- [x] Add explicit empty states and validate the responsive experience at a mobile viewport.
+- [x] Add Vitest coverage for the portfolio router procedures and their success and error behavior.
+- [x] Create the initial delivery checkpoint after final validation.
+- [x] Replace the signed-out workspace shell with a dedicated sign-in screen.
+- [x] Ensure the sign-in button reliably initiates the Manus OAuth flow.
+- [x] Validate signed-out entry and authenticated workspace access, then create a fix checkpoint.
+- [x] Superseded by Google federation: confirm the external Manus OAuth redirect from the published application.
+- [x] Replace the Manus OAuth entry flow with Google account federation for Northstar users.
+- [x] Configure Google OAuth web credentials and the authorized Northstar redirect URI.
+- [x] Implement the Google callback, platform session creation, and Google Sign-In interface.
+- [x] Test Google federation start, credential acceptance, and publish the dedicated Northstar account experience.
+- [x] Superseded by Google federation: replace the Manus OAuth entry path with local Northstar email-and-password account authentication.
+- [x] Superseded by Google federation: add secure password hashing, platform account registration, sign-in, sign-out, and protected-session procedures.
+- [x] Superseded by Google federation: build a dedicated Northstar sign-in and registration screen that never redirects to Manus.
+- [x] Superseded by Google federation: test platform account registration and sign-in, validate the interface, and create an updated checkpoint.
+- [x] Assess the AWS deployment target and required account access for Northstar.
+- [x] Prepare AWS-compatible application, database, static asset, Google OAuth, and environment configuration.
+- [ ] Deploy Northstar to the authorized AWS environment and validate the production endpoint.
+- [ ] Document the AWS deployment handoff, operating steps, and configuration updates.
+- [x] Confirm creation of the private AWS network and NAT gateway required to keep the database private while permitting Google OAuth traffic.
+- [ ] Diagnose why new capabilities are not saved in the AWS-hosted Northstar application.
+- [ ] Correct the application or AWS data-service configuration and redeploy the capability-creation fix.
+- [ ] Verify a new capability persists in the AWS-hosted portfolio workspace.
+- [x] Remove Planning Items from the portfolio interface, navigation, and executive summary views.
+- [x] Preserve existing Planning Items database records without showing them in Northstar.
+- [ ] Test the simplified portfolio experience and deploy the update to the AWS App Runner service.
+- [x] Add authenticated create, edit, reschedule, and delete actions for execution-roadmap milestones.
+- [x] Add typed milestone management procedures with validated use-case, year, phase, title, and status inputs.
+- [ ] Test the editable execution roadmap and deploy the update to the AWS App Runner service.
+- [ ] Validate editable roadmap milestone creation, editing, rescheduling, and deletion in preview before AWS deployment.
+- [ ] Obtain user approval from preview validation before updating the AWS App Runner application image.
+- [x] Add persistent portfolio teams for Core & Cloud, Mobile Access, Fixed & Transport, Application Architecture, and Data Architecture.
+- [x] Associate capabilities and use cases with an owning team, with execution milestones and investment records inheriting their use-case scope.
+- [x] Add team membership and role-based backend access control so team users can edit only their own records while executives retain enterprise visibility.
+- [x] Build team filters, team-scoped management views, and an administrator workflow for granting team access.
+- [ ] Test team isolation, cross-team read visibility, executive rollups, and administration in preview before AWS deployment.
+- [x] Add administrator controls to invite or assign signed-in people to teams, change their lead or contributor role, move them between teams, and remove membership access.
+- [x] Verify and enforce server-side team ownership checks on every portfolio mutation, including investment updates and capability/use-case create, update, and delete operations.
+- [x] Add focused Vitest coverage proving cross-team writes are rejected while executive administrators retain enterprise-wide write access.
+- [ ] Validate the preview with executive and non-executive team accounts to confirm enterprise read visibility and team-scoped editing behavior.
+- [x] Define and apply an STC-inspired white, black, purple, and red color system across Northstar.
+- [x] Update charts, status tones, navigation, dialogs, forms, and team accents to the new visual system.
+- [x] Validate color contrast and the responsive STC visual refresh in preview before AWS deployment.
+- [x] Verify and explicitly align team accents, remaining charts, dialogs, and forms with the STC palette.
+- [x] Validate the STC theme at mobile and tablet viewport sizes across the dashboard, portfolio, roadmaps, and team access screens.
+- [x] Validate the STC theme at a true mobile viewport across the dashboard, portfolio, roadmaps, financial roadmap, and team access screens.
+- [x] Correct Add button background and text contrast using a single accessible STC purple-and-white treatment.
+- [x] Resolve the deployment migration replay error so existing portfolio tables are not recreated during application rollout.
+- [x] Add a clear visible logout button to the authenticated Northstar navigation.
+- [x] Test logout, confirm the Google sign-in page returns, and preserve authenticated navigation behavior.
+- [ ] Confirm the visible logout button itself clears authentication end-to-end from desktop and mobile sidebar states.
+- [ ] Deploy the latest approved Northstar release bundle to the existing AWS App Runner service.
+- [ ] Validate the AWS production endpoint for the STC visual refresh, team access, roadmap editing, and logout control.
+- [ ] Diagnose why Google-authenticated executive and team users cannot create capabilities or edit execution-roadmap milestones in AWS production.
+- [ ] Correct the affected authorization or application-release configuration and redeploy the AWS service.
+- [ ] Verify executive and team user editing permissions for capabilities and milestones in the AWS application.
+- [ ] Diagnose why relationship-map links and graph state do not update in the AWS-hosted application.
+- [ ] Correct relationship-link persistence and graph refresh behavior, then verify it for authorized users in AWS.
+- [ ] Evaluate a NAT-free AWS network option that retains private database access and Google federation.
+- [ ] Document the chosen AWS cost-optimization approach and obtain approval before changing the live network.
+- [ ] Select and implement a lower-cost AWS development topology suitable for Google sign-in and portfolio testing.
+- [ ] Retire or pause unneeded development resources only after the replacement environment is working.
+- [x] Rename Northstar to Architecture Master Roadmap across application branding and browser metadata.
+- [x] Add a white STC brand mark to the top-left application navigation.
+- [x] Correct selector option colors so capability and use-case lists remain readable against the STC dark interface.
+- [x] Validate brand presentation and selector contrast at desktop and mobile sizes before AWS deployment.
+- [x] Rename all user-facing use-case labels, headings, actions, roadmap references, and empty states to Strategic Objectives.
+- [x] Validate that Strategic Objectives terminology remains clear across portfolio, relationships, execution, financial, dashboard, and team views.
+- [x] Ensure newly created capabilities and Strategic Objectives become visible in the relationship map without requiring a manual page refresh.
+- [x] Add a domain filter to the relationship map for capabilities and associated Strategic Objectives.
+- [x] Test relationship-map node visibility, filtering, and link management after portfolio record creation.
+- [x] Preserve visible standalone nodes and cross-domain dependencies when a relationship-map domain filter is applied.
+- [ ] Test relationship-map domain filtering after the final patch for a populated domain and a domain with no links yet.
+- [ ] Create a new capability and Strategic Objective in preview and verify both appear in the map without manual refresh.
+- [ ] Create a relationship link in the updated map and verify the graph and editor refresh after the save.
+- [x] Replace all user-facing USD labels and formatting with Saudi Riyal (SAR) across dashboard and financial roadmap views.
+- [x] Integrate the provided official SAR currency symbol as a deployed financial-interface asset.
+- [x] Validate SAR presentation and symbol contrast on desktop and mobile financial surfaces before AWS deployment.
+- [x] Improve the official SAR symbol crop and contrast so it remains recognizable at compact financial-interface sizes.
+- [x] Reset all existing annual investment records to zero so users can enter the SAR amounts directly.
+- [x] Validate zero-value SAR rollups and editable investment inputs in the financial roadmap.
+- [x] Validate zero-value SAR totals and the official currency symbol on mobile and desktop financial screens after the finalized currency change.
+- [x] Verify SAR input save behavior and refreshed rollups without leaving non-zero test values in the portfolio.
+- [x] Run post-change type checks, automated tests, and production build after the finalized SAR conversion.
+- [ ] Confirm the official SAR symbol is visible and legible across financial summary cards, register heading, and input adornments on desktop and mobile.
+- [ ] Test a temporary SAR investment entry through the financial interface, confirm refreshed rollups, and restore the value to zero.
+- [x] Replace the failing AWS-hosted SAR image with a deployment-safe official currency-symbol treatment.
+- [x] Correct financial summary, register-heading, and annual-input alignment so symbol text never overlaps financial values.
+- [ ] Verify the SAR visual fix in the AWS App Runner application after the replacement release is deployed.
+- [ ] Create and validate a NAT-free AWS development replacement that preserves Northstar test data and Google sign-in.
+- [ ] Update Google OAuth redirect configuration for the replacement development URL before cutover.
+- [ ] Delete the existing NAT Gateway and release any associated development-network resources only after cutover validation.
+- [x] Superseded by private password accounts: replace Google federation with passwordless email-code sign-in for Architecture Master Roadmap.
+- [x] Superseded by private password accounts: add one-time verification code issuance, expiration, rate limiting, and secure session creation.
+- [x] Superseded by private password accounts: add administrator controls to approve, revoke, and assign roles for email addresses that may access the platform.
+- [x] Superseded by private password accounts: configure the email delivery provider and sender identity, then test code delivery before AWS cutover.
+- [x] Retain Google sign-in while enforcing an administrator-managed email authorization list.
+- [x] Block unapproved Google-authenticated email addresses before a platform session is created.
+- [x] Add clear administrator controls to approve, revoke, and review email access alongside team membership.
+- [x] Test authorized and unauthorized Google account access before AWS deployment.
+- [x] Restrict portfolio snapshot reads to approved authenticated email addresses as well as blocking unapproved session creation.
+- [x] Use computed executive access, rather than only the stored user role, when showing the Team access navigation and administrator controls.
+- [x] Superseded by private password accounts: perform a signed-out end-to-end Google authorization test with an email absent from the authorization list and confirm no platform session is created.
+- [x] Superseded by private password accounts: verify an approved non-administrator email signs in successfully and receives only its assigned team editing scope.
+- [x] Replace Google federation with administrator-managed private email-and-password accounts.
+- [x] Add secure password hashing, account activation status, login, logout, and password-reset capability without storing plaintext credentials.
+- [x] Add executive account administration to create approved users, assign team roles, set initial passwords, disable/reactivate accounts, remove non-admin accounts, and reset credentials.
+- [x] Build a private email-and-password sign-in page and remove Google sign-in from the user-facing access path.
+- [x] Test local-account creation, login, denied access, administrator-bootstrap status, logout route, and protected private-account API behavior before AWS deployment.
+- [x] Validate the final inline SAR symbol and financial layout on desktop and mobile after the latest financial interface change.
+- [x] Add automated executive create-account success coverage and verify the resulting private-account login contract.
+- [ ] Browser-validate first-administrator bootstrap, contributor sign-in, disable/reactivate, removal, and team-scoped editing in preview without retaining test data.
+- [x] Accept the configured 17-character bootstrap token in the first-administrator setup form while retaining server-side exact-token verification.
+- [x] Change the private sign-in primary button to white while retaining accessible dark text.
+- [x] Prepare an AWS App Runner release bundle for administrator-managed private email/password authentication without changing the VPC or NAT topology.
+- [ ] Deploy the approved private-authentication bundle to the existing AWS App Runner service and verify the live sign-in screen.
+- [x] Repackage and upload the private-authentication AWS release with the migration-replay fix before deployment.
+- [ ] Collect and diagnose the App Runner internal-system deployment failure before changing the NAT-free release configuration.
+- [ ] Correct the confirmed App Runner deployment issue and redeploy the private-account release without restoring the NAT route.
+- [ ] Capture the failed App Runner service configuration and prepare a replacement service definition that preserves private RDS access on the NAT-free connector route.
+- [ ] Create and validate a replacement App Runner service before deleting the current service.
+- [ ] Obtain separate explicit confirmation before deleting the failed current App Runner service after replacement validation.
+- [ ] Capture the exact replacement App Runner deployment failure and correct the service definition before another create attempt.
+- [ ] Simplify the fresh App Runner service definition and validate its settings before building a new private-auth image.
+- [ ] Build and push a fresh private-account image to the existing northstar ECR repository, then create and verify a new App Runner service.
+- [ ] Create and verify a newly named App Runner service using the existing private-auth image and NAT-free VPC connector after the prior service became stuck.
+- [ ] Rebuild the existing failed northstar-private-auth service with its verified image, secret references, and NAT-free VPC connector configuration.
+- [x] Inventory the confirmed Architecture Master Roadmap development-only AWS resources and dummy RDS data in us-east-1.
+- [ ] Delete the confirmed Architecture Master Roadmap development-only AWS resources and dummy RDS data in us-east-1.
+- [ ] Rebuild a clean lower-cost AWS deployment baseline for private local accounts after the stack reset.
+- [ ] Complete the user-confirmed full deletion of all remaining Northstar development resources after the in-progress App Runner operation reaches a terminal state.
+- [ ] Delete the non-App-Runner Northstar dummy-data resources that are not required by the remaining App Runner services, and report the dependencies that must remain until manual service deletion.
+- [x] Superseded by the user-selected EC2 architecture: review clean AWS prerequisites and ECS Express requirements for Architecture Master Roadmap with private local-account authentication.
+- [x] Superseded by the user-selected EC2 architecture: prepare a clean ECS Express deployment configuration, fresh database, and runtime secrets without restoring the previous NAT Gateway.
+- [x] Superseded by the user-selected EC2 architecture: deploy and verify Architecture Master Roadmap on ECS Express with the administrator-managed private sign-in flow.
+- [x] Superseded by the user-selected EC2 architecture: provision a new dedicated VPC with public ECS Express subnets and a non-public RDS database path, without a NAT Gateway.
+- [ ] Define and provision a new dedicated VPC with a public EC2 application subnet and a private RDS subnet group, without a NAT Gateway.
+- [ ] Prepare and deploy the private-account Architecture Master Roadmap container to EC2 with RDS-only database access and HTTPS termination.
+- [x] Move database migration execution out of the application container startup and into a controlled one-off deployment step for the fresh private RDS database.
+- [x] Prepare an EC2 bootstrap with TLS reverse proxy, ECR image pull, Secrets Manager runtime values, and Session Manager administration without SSH.
+- [x] Add focused test coverage for the lightweight deployment health endpoint.
+- [ ] Inventory the existing AWS NAT Gateway, private route tables, VPC connector, RDS, and App Runner dependencies before any network change.
+- [ ] Design and validate a NAT-free lower-cost AWS connectivity configuration that retains private database access.
+- [ ] Deploy and verify the private-account release on the approved replacement configuration before NAT removal.
+- [ ] Obtain explicit confirmation and safely remove the NAT Gateway only after replacement validation succeeds.
+- [x] Make the already-applied private-account schema migration safe to replay so the deployment startup does not fail on duplicate columns.
+- [x] Remove the private connector subnets’ NAT default route as a reversible no-traffic development test and inspect App Runner viability.
+- [ ] Obtain final confirmation before deleting NAT Gateway nat-0f55bf77e3e765039 and releasing its Elastic IP.
+- [x] Capture AWS CLI proof that route table rtb-04f3f4513cb98c73e no longer sends 0.0.0.0/0 traffic to the NAT Gateway, then re-verify the App Runner database path.
+- [x] Correct the RDS MySQL master-password generator to satisfy the engine length limit and resume the partially created EC2/RDS stack without duplicating resources.
+- [ ] Confirm the prior partial stack has been removed and run the corrected clean EC2/RDS deployment from scratch without a NAT Gateway.
+- [ ] Diagnose and correct the new EC2 public endpoint connection refusal while preserving the dedicated VPC, private RDS, and no-NAT design.
+- [x] Replace the MySQL-incompatible conditional column migration and rerun the EC2 application bootstrap against the fresh private RDS database.
+- [ ] Diagnose and correct the EC2 post-registration sign-in redirect so the first local administrator reaches the dashboard reliably.
+- [x] Harden proxy-aware session-cookie issuance for the HTTPS EC2 host and add focused coverage for secure same-origin local-account sessions.
+- [x] Ensure browser-autofilled private sign-in credentials are read from submitted form fields before invoking the local authentication API.
+- [x] Use a stable private-platform session application ID outside Manus hosting and add regression coverage for external local-account login tokens.
+- [x] Define a production-ready EC2 Auto Scaling Group, Application Load Balancer, launch-template, health-check, and private-RDS access design for Architecture Master Roadmap.
+- [x] Write and validate a consolidated AWS Console-only deployment guide for the dedicated VPC, private RDS, EC2 host, HTTPS, ALB, and Auto Scaling Group.
+- [x] Add authorized Relationship Map controls to edit and remove capability-to-Strategic Objective connections, with confirmation and immediate graph refresh.
+- [ ] Package and deploy the validated Relationship Map connection-management update to the existing EC2 host, then verify the live controls.
+- [ ] Verify the recovered EC2 public HTTPS endpoint and live Relationship Map edit/remove controls after the successful container restart.
+- [ ] Prepare a safe App Runner replacement using the existing private RDS database and local-account authentication before retiring the EC2 fallback host.
+- [ ] Create a dedicated App Runner VPC connector, least-privilege runtime roles, and private-RDS security-group path for the current EC2 deployment VPC.
+- [ ] Shorten the App Runner VPC connector name to meet AWS limits and resume the migration without changing the EC2 fallback or private RDS data.
+- [x] Add a Shared Strategic Objectives type for cross-department objectives, visible to all users but addable, editable, and removable only by administrators.
+- [x] Correct Financial Roadmap SAR conversion and display precision so saved user-entered values do not drift, such as 10.0 becoming 10.012.
+- [x] Store Financial Roadmap entries as direct SAR-million values with no USD conversion, and preserve entered amounts exactly in all financial rollups.
+- [x] Reset all existing dummy Financial Roadmap values to zero SAR million while retaining the direct SAR storage model.
+- [x] Add a multi-select Strategic Objectives filter to the Financial Roadmap with aggregated annual and five-year SAR totals for the selected objectives.
+- [x] Remove the cancelled team-allocation fields and indexes from the preview database so direct-SAR Financial Roadmap saves use the restored data model.
+- [x] Correct the Financial Roadmap multi-select filter’s hook order so loading transitions cannot trigger a conditional-hook runtime error.
+- [x] Ensure the direct-SAR migration resets legacy dummy financial values to zero for any future deployment environment.
+- [ ] Prepare and perform the guarded App Runner release for the current direct-SAR Financial Roadmap checkpoint without changing the private-RDS no-NAT architecture.
+- [ ] Diagnose the temporary App Runner migration-service Web ACL retrieval message and safely complete or recover the direct-SAR release.
+- [ ] Create a clean disposable-test-data private RDS database and a new App Runner service for the current Architecture Master Roadmap release.
+- [x] Provide a guarded fresh App Runner and private-RDS deployment script that produces a new one-time private administrator setup flow.
+- [x] Provide a guarded fresh App Runner and private-RDS deployment script that produces a new one-time private administrator setup flow.
+- [ ] Diagnose the failed fresh App Runner deployment operation 73172110e1e04796960cbae8d1acd96e and correct the release path without duplicating fresh resources.
+- [x] Replace the temporary migration App Runner service with one-time initialization in the new application service for the empty fresh RDS database.
+- [x] Replace the temporary migration App Runner service with one-time initialization in the new application service for the empty fresh RDS database.
+- [x] Permit an owner to reset the unused fresh bootstrap token privately if it was not retained after a failed deployment attempt.
+- [x] Create an initial Executive Roadmap milestone automatically when a capability is linked to a Strategic Objective, without overwriting user-managed roadmap records.
+- [x] Add administrator-managed Financial Roadmap planning years so future columns such as 2031 and 2032 can be added without code changes.
+- [x] Add authorized bulk capability-to-Strategic Objective mapping with one selection action, duplicate protection, and immediate map refresh.
+- [x] Add a visible bulk capability mapping save action and remove the redundant one-to-one relationship form from the Relationship Map.
+- [x] Synchronize capability-derived Executive Roadmap milestones when a capability relationship is added, removed, renamed, or rescheduled.
+- [x] Ensure Strategic Objective changes remain automatically reflected in the Executive Roadmap without creating duplicate or stale generated milestones.
+- [x] Correct the bulk capability mapping action-label contrast and remove the duplicate bulk-link control from the Relationship Map.
+- [x] Remove the upper duplicate Bulk Relationship Mapping panel shown in the user’s verification screenshot, leaving exactly one bulk mapping workflow.
+- [x] Automatically add future roadmap years to both Executive and Financial Roadmaps when a capability is scheduled beyond the current horizon, including 2031 and later.
+- [x] Make capability target dates flexible through 2035 and beyond, and retain all required future years in horizontally scrollable Executive and Financial Roadmaps.
+- [x] Correct the Executive Roadmap dynamic grid so future years such as 2031 remain to the right of 2030 and never wrap beneath the Strategic Objective column.
+- [x] Display a fixed five-year Executive Roadmap viewport while preserving horizontally scrollable later-year columns such as 2031 and beyond.
+- [x] Rename all visible product branding and metadata from Architecture Master Roadmap to Strategic Roadmap.
+- [ ] Deploy the current bulk mapping, roadmap synchronization, and configurable financial-year release to the active AWS App Runner service while preserving the fresh RDS data and administrator account.
+- [ ] Deploy the current Strategic Roadmap branding and fixed five-year scrollable roadmap release to the active App Runner service without changing private-account data.
+- [x] Add click-to-focus Relationship Map behavior that shows only the selected capability or Strategic Objective and its directly linked context, with a clear way to return to the full graph.
+- [x] Add secure formatted Excel export for all provisioned portfolio data: capabilities, Strategic Objectives, relationships, Executive Roadmap milestones, Financial Roadmap values, and planning years.
+- [x] Add secure formatted PowerPoint export that presents the current strategic portfolio, relationships, execution outlook, and financial roadmap for executive review.
+- [x] Correct the PowerPoint export module import so administrators can download the generated presentation without a constructor runtime error.
+- [x] Upgrade the PowerPoint export with executive-ready Strategic Roadmap styling, concise hierarchy, presentation-friendly summaries, and minimal manual-editing needs.
+- [x] Add executive PowerPoint visuals that trace capabilities to Strategic Objectives and draw concise execution and financial roadmaps from live portfolio data.
+- [ ] Deploy the executive-ready Strategic Roadmap PowerPoint export and latest portfolio improvements to the active AWS App Runner service while preserving private account data.
+- [x] Prepare a guarded in-place App Runner update that applies the additive roadmap migration once and then restores the normal application image.
+- [x] Build an administrator-managed KPI library from the supplied strategic KPI catalogue and allow multiple KPIs to be mapped to each capability for roadmap planning and executive reporting.
+- [x] Show KPI mapping coverage and capabilities without KPI mappings in the executive PowerPoint export.
+- [ ] Deploy the published KPI library, roadmap coverage, and executive-export release to the existing AWS App Runner service while preserving the private RDS data and local accounts.
+- [x] Provide the guarded CloudShell deployment and verification commands for the published KPI release.
+- [x] Add a top-of-portfolio KPI Library section that shows existing measures and exposes an administrator-only new-KPI action.
+- [x] Add Internal and External budget classification to Financial Roadmap entries and summarize internal, external, and total direct-SAR budgets.
+- [x] Provide the compact guarded CloudShell deployment script for the published Internal and External Financial Roadmap release.
+- [x] Enhance the executive PowerPoint extraction with complete capability-to-Strategic Objective mapping coverage, yearly capability enablement counts per objective, and explicit Internal/External financial roadmap reporting.
+- [x] Provide the compact guarded CloudShell deployment script for the published executive PowerPoint export enhancement.

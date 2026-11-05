@@ -1,0 +1,152 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --font-sans: "DM Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Playfair Display", Georgia, serif;
+  --font-mono: "DM Mono", ui-monospace, monospace;
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+:root, .dark {
+  --radius: 1rem;
+  --stc-black: #060407;
+  --stc-ink: #110d15;
+  --stc-surface: #1b1520;
+  --stc-purple: #5b0fb8;
+  --stc-purple-bright: #a35cff;
+  --stc-purple-light: #d9c0ff;
+  --stc-red: #e31b48;
+  --stc-red-light: #ffb2c1;
+  --stc-white: #fffdfd;
+  --background: oklch(0.105 0.014 320);
+  --foreground: oklch(0.985 0.004 320);
+  --card: oklch(0.155 0.018 320);
+  --card-foreground: oklch(0.985 0.004 320);
+  --popover: oklch(0.17 0.02 320);
+  --popover-foreground: oklch(0.985 0.004 320);
+  --primary: oklch(0.52 0.22 308);
+  --primary-foreground: oklch(0.99 0 0);
+  --secondary: oklch(0.22 0.03 320);
+  --secondary-foreground: oklch(0.92 0.015 320);
+  --muted: oklch(0.215 0.018 320);
+  --muted-foreground: oklch(0.72 0.02 320);
+  --accent: oklch(0.29 0.07 315);
+  --accent-foreground: oklch(0.99 0 0);
+  --destructive: oklch(0.61 0.22 18);
+  --destructive-foreground: oklch(0.99 0 0);
+  --border: oklch(0.42 0.045 320 / 52%);
+  --input: oklch(0.29 0.04 320);
+  --ring: oklch(0.7 0.19 308);
+  --sidebar: oklch(0.09 0.012 320);
+  --sidebar-foreground: oklch(0.93 0.012 320);
+  --sidebar-primary: oklch(0.7 0.19 308);
+  --sidebar-primary-foreground: oklch(0.12 0.02 320);
+  --sidebar-accent: oklch(0.2 0.05 315);
+  --sidebar-accent-foreground: oklch(0.985 0.004 320);
+  --sidebar-border: oklch(0.38 0.035 320 / 48%);
+  --sidebar-ring: oklch(0.7 0.19 308);
+}
+
+@layer base {
+  * { @apply border-border outline-ring/50; }
+  html { background: var(--background); }
+  body { @apply bg-background text-foreground font-sans antialiased; }
+  button:not(:disabled), [role="button"]:not([aria-disabled="true"]), a[href], select:not(:disabled), input:not(:disabled), textarea:not(:disabled) { @apply cursor-pointer; }
+  ::selection { background: oklch(0.62 0.22 308 / 42%); }
+}
+
+@layer components {
+  .app-canvas {
+    min-height: 100vh;
+    background-image: radial-gradient(circle at 88% 2%, oklch(0.36 0.16 308 / 28%), transparent 28rem), radial-gradient(circle at 16% 82%, oklch(0.42 0.19 18 / 14%), transparent 31rem), linear-gradient(125deg, #060407, #120b18 62%, #09060b);
+  }
+  .glass-card {
+    background: linear-gradient(135deg, rgb(34 22 40 / 92%), rgb(14 10 17 / 96%));
+    border: 1px solid rgb(217 192 255 / 16%);
+    box-shadow: 0 18px 60px rgb(0 0 0 / 42%), inset 0 1px 0 rgb(255 255 255 / 7%);
+    backdrop-filter: blur(16px);
+  }
+  .eyebrow { font-family: var(--font-mono); letter-spacing: .13em; text-transform: uppercase; font-size: .68rem; color: var(--stc-purple-light); }
+  .serif-title { font-family: var(--font-display); letter-spacing: -.035em; }
+  .mono { font-family: var(--font-mono); }
+  .metric-value { font-family: var(--font-display); letter-spacing: -.05em; line-height: .95; }
+  .fine-rule { height: 1px; background: linear-gradient(90deg, transparent, rgb(163 92 255 / 54%), transparent); }
+  .status-dot { width: .47rem; height: .47rem; border-radius: 999px; display: inline-block; box-shadow: 0 0 0 4px currentColor; opacity: .9; }
+  .reveal { animation: reveal .52s cubic-bezier(.23, 1, .32, 1) both; }
+  .reveal-delay-1 { animation-delay: .07s; }
+  .reveal-delay-2 { animation-delay: .14s; }
+  .reveal-delay-3 { animation-delay: .21s; }
+  .soft-scroll::-webkit-scrollbar { width: 6px; height: 6px; }
+  .soft-scroll::-webkit-scrollbar-thumb { background: rgb(163 92 255 / 45%); border-radius: 999px; }
+  .relationship-map-pane { min-height: 560px; }
+  .roadmap-grid { --roadmap-year-width: max(140px, calc((100vw - 570px) * .2)); display: flex; width: max-content; }
+  .roadmap-grid > :first-child { flex: 0 0 270px; }
+  .roadmap-grid > :not(:first-child) { flex: 0 0 var(--roadmap-year-width); }
+  .financial-roadmap-table { --financial-year-width: max(120px, calc((100vw - 760px) * .2)); width: max-content; }
+  .financial-roadmap-table tr > :first-child { min-width: 290px; }
+  .financial-roadmap-table tr > :not(:first-child):not(:last-child) { min-width: var(--financial-year-width); width: var(--financial-year-width); }
+  .financial-roadmap-table tr > :last-child { min-width: 120px; }
+  .stc-wordmark { color: var(--stc-white); font-family: var(--font-sans); font-size: 1.2rem; font-weight: 800; letter-spacing: -.09em; line-height: 1; text-transform: lowercase; }
+  .stc-wordmark::after { content: "."; color: var(--stc-purple-bright); }
+}
+
+@layer utilities {
+  button[class*="bg-cyan-"][class*="text-slate-950"], a[class*="bg-cyan-"][class*="text-slate-950"] { background-color: var(--stc-purple) !important; color: var(--stc-white) !important; box-shadow: 0 10px 32px rgb(91 15 184 / 28%); }
+  button[class*="bg-cyan-"][class*="text-slate-950"]:hover, a[class*="bg-cyan-"][class*="text-slate-950"]:hover { background-color: var(--stc-purple-bright) !important; color: var(--stc-white) !important; }
+  [class*="text-cyan-"] { color: var(--stc-purple-light) !important; }
+  [class*="bg-cyan-"] { background-color: rgb(91 15 184 / 18%) !important; }
+  [class*="border-cyan-"] { border-color: rgb(163 92 255 / 34%) !important; }
+  [class*="hover:bg-cyan-"]:hover { background-color: rgb(91 15 184 / 34%) !important; }
+  [class*="hover:text-cyan-"]:hover { color: var(--stc-white) !important; }
+  [class*="hover:border-cyan-"]:hover { border-color: var(--stc-purple-bright) !important; }
+  [class*="text-amber-"] { color: var(--stc-red-light) !important; }
+  [class*="bg-amber-"] { background-color: rgb(227 27 72 / 15%) !important; }
+  [class*="border-amber-"] { border-color: rgb(227 27 72 / 34%) !important; }
+  [class*="text-emerald-"], [class*="text-fuchsia-"], [class*="text-violet-"] { color: var(--stc-purple-light) !important; }
+  [class*="bg-emerald-"], [class*="bg-fuchsia-"], [class*="bg-violet-"] { background-color: rgb(91 15 184 / 16%) !important; }
+  [class*="border-emerald-"], [class*="border-fuchsia-"], [class*="border-violet-"] { border-color: rgb(163 92 255 / 30%) !important; }
+  [class*="from-cyan-"] { --tw-gradient-from: rgb(91 15 184 / 25%) var(--tw-gradient-from-position) !important; }
+  [class*="bg-\[\#111a2d\]"] { background-color: rgb(10 7 12 / 92%) !important; }
+  [class*="bg-\[\#17233a\]"] { background-color: #19101f !important; }
+  [class*="bg-\[\#1b2943\]"] { background-color: #21142a !important; }
+  select { color: var(--stc-white); color-scheme: dark; }
+  select option, select optgroup { background-color: #19101f; color: var(--stc-white); }
+  select option:checked { background-color: var(--stc-purple); color: var(--stc-white); }
+}
+
+@keyframes reveal { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+@media (prefers-reduced-motion: reduce) { .reveal { animation: none; } }

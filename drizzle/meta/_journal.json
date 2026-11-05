@@ -1,0 +1,76 @@
+{
+  "version": "7",
+  "dialect": "mysql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "5",
+      "when": 1787821155815,
+      "tag": "0000_thick_hellcat",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "5",
+      "when": 1787821349412,
+      "tag": "0001_military_vanisher",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1787915902448,
+      "tag": "0002_special_excalibur",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "5",
+      "when": 1787916367201,
+      "tag": "0003_chemical_hannibal_king",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "5",
+      "when": 1788094802078,
+      "tag": "0004_lowly_the_phantom",
+      "breakpoints": true
+    },
+    {
+      "idx": 5,
+      "version": "5",
+      "when": 1788175187985,
+      "tag": "0005_tan_vindicator",
+      "breakpoints": true
+    },
+    {
+      "idx": 6,
+      "version": "5",
+      "when": 1788183372757,
+      "tag": "0006_sloppy_thor_girl",
+      "breakpoints": true
+    },
+    {
+      "idx": 7,
+      "version": "5",
+      "when": 1788328800000,
+      "tag": "0007_sleepy_christian_walker",
+      "breakpoints": true
+    },
+    {
+      "idx": 8,
+      "version": "5",
+      "when": 1788692400000,
+      "tag": "0008_kpi_coverage",
+      "breakpoints": true
+    },
+    {
+      "idx": 9,
+      "version": "5",
+      "when": 1788717000000,
+      "tag": "0009_budget_classification",
+      "breakpoints": true
+    }
+  ]
+}

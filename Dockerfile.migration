@@ -1,0 +1,14 @@
+FROM node:22-bookworm-slim
+
+WORKDIR /app
+COPY . .
+RUN npm install -g corepack@latest && corepack pnpm install && corepack pnpm run build
+
+ENV NODE_ENV=production
+ENV PORT=8080
+EXPOSE 8080
+
+# This image is used only during a guarded deployment operation to apply checked-in
+# migrations before the App Runner service is returned to the normal application image.
+# Normal application containers never run database migrations at startup.
+CMD ["sh", "-c", "corepack pnpm drizzle-kit migrate && node dist/index.js"]
